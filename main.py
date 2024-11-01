@@ -15,8 +15,8 @@ from selenium.webdriver.support.ui import Select
 from selenium.webdriver.common.keys import Keys
 
 
-username = os.getenv("USERNAME")
-password = os.getenv("PASSWORD")
+username = os.getenv("USER_APPLICATION")
+password = os.getenv("PASSWORD_APPLICATION")
 
 base_dir = os.path.dirname(os.path.abspath(__file__))
 source_excel_file_path = os.path.join(base_dir, 'files', 'task.xlsx')
@@ -50,16 +50,14 @@ if __name__ == '__main__':
         submit_button = driver.find_element('xpath', '//*[@id="root"]/div/div[2]/main/main/div/form/button')
         submit_button.click()
         
-        sleep(2)
+        sleep(6)
         fluxo_caixa_button = driver.find_element('xpath', '//*[@id="root"]/div/div[2]/main/div[1]/details[1]/summary')
         fluxo_caixa_button.click()
-        
-        automation = Automation(driver)
-        
+        sleep(1)
         
         convert_excel_to_csv()
         
-        with open('output.csv', 'r') as file:
+        with open('output.csv', 'r', encoding='utf-8') as file:
             file_read = csv.reader(file)
             list_file_read = list(file_read)
             
@@ -67,6 +65,7 @@ if __name__ == '__main__':
             list_file_read.pop(0)
             
             for i, line in enumerate(list_file_read):
+                automation = Automation(driver)
                 automation.insert_items(line)
         # Move to file for dir (read)
         move_to_file(source_excel_file_path, success_excel_file_path)

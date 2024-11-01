@@ -36,7 +36,7 @@ class Automation:
             
             data_insercao_input.send_keys(data_insercao_value)
 
-            data_insercao_input.send_keys(Keys.TAB)  # Tab to the time input, or send the T directly
+            data_insercao_input.send_keys(Keys.TAB) 
             data_insercao_input.send_keys("15:30")
         
             sleep(1)
@@ -63,9 +63,8 @@ class Automation:
             
             salvar_button = self.driver.find_element('xpath', '//*[@id="root"]/div/div[2]/main/div[4]/main/form/section/section[4]/button')
             salvar_button.click()
+            sleep(3)
             
-                    
-            sleep(2)
         except WebDriverException as e:
             print(f"Ocorreu um erro: {e}")
             self.driver.quit()
