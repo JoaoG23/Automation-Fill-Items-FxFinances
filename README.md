@@ -31,11 +31,7 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias:
 2. Execute o script `automation.py`.
 3. A automação preencherá os itens automaticamente no app **Fx-Finances**.
 
-## 5. Agradecimentos
-
-Agradecimentos especiais a todos os contribuidores e à comunidade open-source pelo suporte.
-
-## 6. Autor do Projeto
+## 5. Autor do Projeto
 
  <img style="border-radius:50%;" src="https://avatars.githubusercontent.com/u/80895578?v=4" width="100px;" alt=""/>
  <br />

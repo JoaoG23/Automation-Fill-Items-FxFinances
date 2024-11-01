@@ -12,6 +12,10 @@ from utils.convert_format_date_to_datebr import convert_format_date_to_datebr
 
 service = Service(ChromeDriverManager().install())
 
+#Obs: 
+# Para não dar erro na automação, busque por um item no site
+# que aparece somente existe quando a tela estiver carregada.
+
 class Automation:
         
     def insert_items(self, items):
@@ -47,7 +51,6 @@ class Automation:
             
             data_insercao_value = convert_format_date_to_datebr(items[0])
             
-            print(data_insercao_value)
             data_insercao_input.send_keys(data_insercao_value)
 
             data_insercao_input.send_keys(Keys.TAB)  # Tab to the time input, or send the T directly

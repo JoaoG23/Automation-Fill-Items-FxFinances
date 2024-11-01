@@ -9,7 +9,6 @@ import openpyxl
 import csv
 import os
 
-# Defina o caminho do arquivo Excel
 current_dir = os.getcwd()
 excel_file_path = os.path.join(current_dir, 'files', 'task.xlsx')
 
